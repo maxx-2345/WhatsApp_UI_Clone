@@ -5,51 +5,42 @@ class ChatScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<String> name=["Sam","Sam","Sam","Sam","Sam","Sam","Sam","Sam"];
+    List<String> message=["Hello","Hello","Hello","Hello","Hello","Hello","Hello","Hello"];
     return Scaffold(
-      body: ListView(
-        children:  [
-          ListTile(
-            splashColor: Colors.grey,
-            leading: _profile(),
-            title: Text("Sam",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 17),),
-            subtitle: Text("Hello"),
+      appBar: AppBar(
+        title: const Text("WhatsApp", style: TextStyle(
+            fontWeight: FontWeight.bold, fontSize: 24, color: Colors.green),),
+        actions: const [
+          Padding(
+            padding: EdgeInsets.all(10.0),
+            child: Icon(Icons.qr_code, color: Colors.black,),
           ),
-          ListTile(
-            leading: _profile(),
-            title: Text("Sam",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 17),),
-            subtitle: Text("Hello"),
+          Padding(
+            padding: EdgeInsets.all(10.0),
+            child: Icon(Icons.camera_alt_outlined, color: Colors.black,),
           ),
-          ListTile(
-            leading:_profile(),
-            title: Text("Sam",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 17),),
-            subtitle: Text("Hello"),
-          ),
-          ListTile(
-            leading: _profile(),
-            title: Text("Sam",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 17),),
-            subtitle: Text("Hello"),
-          ),
-          ListTile(
-            leading: _profile(),
-            title: Text("Sam",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 17),),
-            subtitle: Text("Hello"),
-          ),
-          ListTile(
-            leading: _profile(),
-            title: Text("Sam",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 17),),
-            subtitle: Text("Hello"),
-          ),
-          ListTile(
-            leading: _profile(),
-            title: Text("Sam",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 17),),
-            subtitle: Text("Hello"),
+          Padding(
+            padding: EdgeInsets.all(10.0),
+            child: Icon(Icons.more_vert, color: Colors.black,),
           ),
         ],
+      ),
+      body: ListView.builder(
+        itemCount: 8,
+        itemBuilder: (context,index){
+          return ListTile(
+            onTap: (){},
+            leading: _profile(),
+            title: Text(name[index],style: const TextStyle(fontWeight: FontWeight.bold,fontSize: 17),),
+            subtitle: Text(message[index]),
+          );
+        },
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: (){},
         backgroundColor: Colors.green,
-        child: const Icon(Icons.chat,color: Colors.black,),
+        child: const Icon(Icons.chat,color: Colors.white,),
       ),
     );
   }
@@ -59,7 +50,7 @@ class ChatScreen extends StatelessWidget {
       height: 40,
       width: 40,
       decoration: BoxDecoration(color: Colors.grey.shade300,shape: BoxShape.circle),
-      child: Center(
+      child: const Center(
         child: Icon(Icons.person,size: 40,),
       ),
     );

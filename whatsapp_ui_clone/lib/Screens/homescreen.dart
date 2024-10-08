@@ -25,24 +25,7 @@ class _HomescreenState extends State<Homescreen> {
       _controller.jumpToPage(index);
     }
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("WhatsApp", style: TextStyle(
-            fontWeight: FontWeight.bold, fontSize: 24, color: Colors.green),),
-        actions: const [
-          Padding(
-            padding: EdgeInsets.all(10.0),
-            child: Icon(Icons.qr_code, color: Colors.black,),
-          ),
-          Padding(
-            padding: EdgeInsets.all(10.0),
-            child: Icon(Icons.camera_alt_outlined, color: Colors.black,),
-          ),
-          Padding(
-            padding: EdgeInsets.all(10.0),
-            child: Icon(Icons.more_vert, color: Colors.black,),
-          ),
-        ],
-      ),
+
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
